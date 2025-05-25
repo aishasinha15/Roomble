@@ -1,0 +1,451 @@
+/* Likes Page CSS - Matching Discover page color scheme */
+:root {
+    --primary: #d7d570;
+    --secondary: #6E463C;
+    --primary-light: #e5e5a3;
+    --secondary-light: #8a5a4f;
+    --text-dark: #333;
+    --text-light: #fff;
+    --background: #f8f8f0;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+  }
+  
+  .likes-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+  
+  .likes-title {
+    color: var(--secondary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Likes list view */
+  .likes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .like-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    display: flex;
+    height: 120px;
+    cursor: pointer;
+    transition: transform var(--transition-speed);
+  }
+  
+  .like-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .like-card-photo {
+    position: relative;
+    width: 30%;
+    overflow: hidden;
+  }
+  
+  .like-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .like-card-info {
+    padding: 0.75rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .like-card-info h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+    color: var(--secondary);
+  }
+  
+  .occupation-small {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+  }
+  
+  .liked-time-small {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 0.25rem;
+  }
+  
+  .compatibility-badge-small {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+  
+  .like-card-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background-color: #fafafa;
+  }
+  
+  .decline-button-small, .like-button-small {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .decline-button-small {
+    background-color: #fff;
+    color: #ff4c68;
+    border: 1px solid #ff4c68;
+  }
+  
+  .like-button-small {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--primary);
+  }
+  
+  .decline-button-small:hover, .like-button-small:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Detailed profile view - similar to discover page */
+  .detailed-profile {
+    position: relative;
+    height: 75vh;
+    max-height: 700px;
+    top: 60px;
+  }
+  
+  .back-button {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    background: none;
+    border: none;
+    color: var(--secondary);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    z-index: 10;
+  }
+  
+  .roommate-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .photo-carousel {
+    position: relative;
+    height: 55%;
+    background-color: #f0f0f0;
+    overflow: hidden;
+  }
+  
+  .profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .photo-nav {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .photo-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+  }
+  
+  .photo-dot.active {
+    background-color: white;
+    width: 8px;
+    height: 8px;
+  }
+  
+  .photo-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: var(--secondary);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .photo-nav-btn.prev {
+    left: 10px;
+  }
+  
+  .photo-nav-btn.next {
+    right: 10px;
+  }
+  
+  .compatibility-badge {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+  
+  /* .profile-info {
+    padding: 1.25rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  } */
+  
+  .profile-info {
+    padding: 1.25rem;
+    width: 100%; /* Ensure full width */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allow scrolling for content that doesn't fit */
+    flex-grow: 1; /* Allow this section to grow and fill available space */
+  }
+  
+  .nam {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary);
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .lococcp {
+    margin-top: 5px;
+    margin-right: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .preferences-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  
+  .preference-section {
+    margin-bottom: 12px;
+    flex: 1;
+  }
+  
+  .preference-header {
+    color: var(--secondary);
+    font-size: 1rem;
+    margin: 5px 0;
+    font-weight: 600;
+  }
+  
+  .section-title {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin: 12px 0 8px 0;
+    font-weight: 600;
+  }
+  
+  .preference-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .preference-tag {
+    background-color: var(--primary-light);
+    color: var(--secondary);
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  
+ 
+  
+  .liked-time {
+    font-size: 0.85rem;
+    color: var(--secondary);
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+  
+ 
+  
+  .prompt-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .prompt-item {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--primary);
+  }
+  
+  .prompt-item h4 {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+  }
+  
+  .prompt-item p {
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+  }
+  
+  .decline-button, .like-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .decline-button {
+    background-color: #fff;
+    color: #ff4c68;
+    border: 2px solid #ff4c68;
+  }
+  
+  .like-button {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: 2px solid var(--primary);
+  }
+  
+  .decline-button:hover, .like-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* No likes state */
+  .no-likes {
+    text-align: center;
+    background-color: #fff;
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+  }
+  
+  .no-likes h3 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+  }
+  
+  .no-likes p {
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  .refresh-button {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+  }
+  
+  .refresh-button:hover {
+    background-color: var(--primary-light);
+  }
+  
+  @media (max-width: 576px) {
+    .likes-container {
+      padding: 1rem;
+    }
+    
+    .detailed-profile {
+      height: 70vh;
+    }
+    
+    .action-buttons {
+      gap: 2rem;
+    }
+    
+    .decline-button, .like-button {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+    
+    .like-card {
+      height: 100px;
+    }
+    
+    .like-card-info h3 {
+      font-size: 1rem;
+    }
+  }

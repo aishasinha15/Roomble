@@ -1,0 +1,34 @@
+# Node modules - nobody needs 100MB of fluff in their repo
+node_modules/
+
+# Environment variables - your secret sauce stays safe
+.env
+
+# Logs - because we all make mistakes
+logs
+*.log
+npm-debug.log*
+
+# OS-specific files - because we all have baggage
+.DS_Store
+Thumbs.db
+
+# Optional build folders
+dist/
+build/
+
+# Cache and temp stuff
+.cache/
+tmp/
+temp/
+*.tmp
+
+# IDE files - your tools, your business
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
+
+# dotenv backups (just in case you're... extra cautious)
+.env.*
